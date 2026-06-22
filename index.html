@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>PiliKart</title>
+    <meta name="description" content="PiliKart — Your one-stop mobile shop. Est. 2026" />
+    <meta name="theme-color" content="#4caf50" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="PiliKart" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="PiliKart" />
+    <meta property="og:description" content="PiliKart — Your one-stop mobile shop. Est. 2026" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PiliKart" />
+    <meta name="twitter:description" content="PiliKart — Your one-stop mobile shop. Est. 2026" />
+    <link rel="icon" type="image/jpeg" href="/logo.jpg" />
+    <link rel="apple-touch-icon" href="/logo.jpg" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS Anti-Replit Badge Code -->
+    <style>
+      iframe[src*="replit"], 
+      .replit-badge, 
+      #__next-build-watcher, 
+      [id^="replit"],
+      #replit-badge-root {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        height: 0 !important;
+        width: 0 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Gi-force register na ang Service Worker para mo-trigger ang Install Button -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('Service Worker Active!', reg))
+            .catch(err => console.error('Service Worker Error!', err));
+        });
+      }
+    </script>
+
+    <!-- JS Anti-Replit Badge Code -->
+    <script>
+      const clearReplitElements = () => {
+        const targets = [
+          '.replit-badge',
+          'iframe[src*="replit"]',
+          '#replit-badge-root',
+          '[id^="replit"]'
+        ];
+        targets.forEach(selector => {
+          document.querySelectorAll(selector).forEach(el => el.remove());
+        });
+      };
+      window.addEventListener('DOMContentLoaded', clearReplitElements);
+      window.addEventListener('load', () => {
+        setTimeout(clearReplitElements, 500);
+        setTimeout(clearReplitElements, 2000);
+      });
+    </script>
+  </body>
+</html>
